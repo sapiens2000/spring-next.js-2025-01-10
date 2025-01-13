@@ -1,29 +1,40 @@
 package com.ll.nextjs20250110.domain.post.post.dto;
 
 import com.ll.nextjs20250110.domain.post.post.entity.Post;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
+import org.springframework.lang.NonNull;
 
 import java.time.LocalDateTime;
 
 @Getter
 public class PostWithContentDto {
-    private long id;
+    @NotNull
+    private final long id;
 
-    private LocalDateTime createDate;
+    @NonNull
+    private final LocalDateTime createDate;
 
-    private LocalDateTime modifyDate;
+    @NonNull
+    private final LocalDateTime modifyDate;
 
-    private long authorId;
+    @NotNull
+    private final long authorId;
 
-    private String authorName;
+    @NonNull
+    private final String authorName;
 
-    private String title;
+    @NonNull
+    private final String title;
 
-    private String content;
+    @NonNull
+    private final String content;
 
-    private boolean published;
+    @NotNull
+    private final boolean published;
 
-    private boolean listed;
+    @NotNull
+    private final boolean listed;
 
     public PostWithContentDto(Post post) {
         this.id = post.getId();

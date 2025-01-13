@@ -14,6 +14,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
@@ -31,8 +32,11 @@ public class ApiV1PostController {
 
 
     record PostStatisticsResBody(
+            @NotNull
             long totalPostCount,
+            @NotNull
             long totalPublishedPostCount,
+            @NotNull
             long totalListedPostCount
     ) {
     }

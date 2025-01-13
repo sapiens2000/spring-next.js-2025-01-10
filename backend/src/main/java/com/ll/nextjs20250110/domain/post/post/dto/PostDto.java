@@ -1,26 +1,36 @@
 package com.ll.nextjs20250110.domain.post.post.dto;
 
 import com.ll.nextjs20250110.domain.post.post.entity.Post;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
+import org.springframework.lang.NonNull;
 
 import java.time.LocalDateTime;
 
 @Getter
 public class PostDto {
+    @NotNull
     private long id;
 
+    @NonNull
     private LocalDateTime createDate;
 
+    @NonNull
     private LocalDateTime modifyDate;
 
+    @NotNull
     private long authorId;
 
+    @NonNull
     private String authorName;
 
+    @NonNull
     private String title;
 
+    @NotNull
     private boolean published;
 
+    @NotNull
     private boolean listed;
 
     public PostDto(Post post) {

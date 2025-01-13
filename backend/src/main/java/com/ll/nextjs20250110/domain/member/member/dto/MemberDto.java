@@ -1,20 +1,26 @@
 package com.ll.nextjs20250110.domain.member.member.dto;
 
 import com.ll.nextjs20250110.domain.member.member.entity.Member;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
+import org.springframework.lang.NonNull;
 
 import java.time.LocalDateTime;
 
 
 @Getter
 public class MemberDto {
-    private long id;
+    @NotNull
+    private final long id;
 
-    private LocalDateTime createDate;
+    @NonNull
+    private final LocalDateTime createDate;
 
-    private LocalDateTime modifyDate;
+    @NonNull
+    private final LocalDateTime modifyDate;
 
-    private String nickname;
+    @NonNull
+    private final String nickname;
 
     public MemberDto(Member member) {
         this.id = member.getId();
