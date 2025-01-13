@@ -27,7 +27,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header>
+          <a href="/">홈</a>
+          <a href="/about">소개</a>
+        </header>
         {children}
+        <footer></footer>
       </body>
     </html>
   );
