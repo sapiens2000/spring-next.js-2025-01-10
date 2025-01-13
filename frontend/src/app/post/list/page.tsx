@@ -1,4 +1,4 @@
-import type { paths, components } from "@/lib/backend/apiV1/schema";
+import type { paths } from "@/lib/backend/apiV1/schema";
 import createClient from "openapi-fetch";
 
 type PostDto = components["schemas"]["PostDto"];
@@ -28,7 +28,7 @@ export default async function page({
     },
   });
 
-  const responseBody = await response.data;
+  const responseBody = await response.data!!;
 
   return (
     <div>
@@ -42,12 +42,12 @@ export default async function page({
       </form>
 
       <div>
-        <div>currentPageNumber : {responseBody?.currentPageNumber}</div>
-        <div>pageSize : {responseBody?.pageSize}</div>
-        <div>totalPages : {responseBody?.totalPages}</div>
-        <div>totalItems : {responseBody?.totalItems}</div>
+        <div>currentPageNumber : {responseBody.currentPageNumber}</div>
+        <div>pageSize : {responseBody.pageSize}</div>
+        <div>totalPages : {responseBody.totalPages}</div>
+        <div>totalItems : {responseBody.totalItems}</div>
         <ul>
-          {responseBody?.items.map((item) => (
+          {responseBody.items.map((item) => (
             <li key={item.id} className="border-[2px] border-[red] my-3">
               <div>id : {item.id}</div>
               <div>createDate : {item.createDate}</div>
