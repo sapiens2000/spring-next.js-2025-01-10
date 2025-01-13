@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body
         className={`${geistSans.variable} ${geistMono.variable} flex flex-col antialiased min-h-[100vh] border-[10px]`}
       >
@@ -32,6 +32,7 @@ export default function RootLayout({
           <div className="flex gap-2">
             <Link href="/">홈</Link>
             <Link href="/about">소개</Link>
+            <Link href="/post/list">글</Link>
           </div>
         </header>
         <main className="flex-grow border-[2px] border-[blue]">{children}</main>
