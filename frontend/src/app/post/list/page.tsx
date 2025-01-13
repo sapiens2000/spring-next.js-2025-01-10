@@ -1,18 +1,11 @@
 import type { components } from "@/lib/backend/apiV1/schema";
 
 type PostDto = components["schemas"]["PostDto"];
-
-type PostItemPageDto = {
-  currentPageNumber: number;
-  pageSize: number;
-  totalPages: number;
-  totalItems: number;
-  items: PostDto[];
-};
+type PageDtoPostDto = components["schemas"]["PageDtoPostDto"];
 
 export default async function page() {
   const response = await fetch("http://localhost:8080/api/v1/posts");
-  const body: PostItemPageDto = await response.json();
+  const body: PageDtoPostDto = await response.json();
 
   return (
     <div>
